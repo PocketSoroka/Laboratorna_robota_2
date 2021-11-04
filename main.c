@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <math.h>
 
-double F(double x)//Задаю свою функцию
+double F(double x)//Р—Р°РґР°СЋ СЃРІРѕСЋ С„СѓРЅРєС†РёСЋ
     {
     double f;
     double sqrt(double (X));
@@ -10,7 +10,7 @@ double F(double x)//Задаю свою функцию
     return f;
     }
 
-double Parabola(double a,double b, int N)// Вычисление интеграла способом Симпсона или параболой
+double Parabola(double a,double b, int N)// Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° СЃРїРѕСЃРѕР±РѕРј РЎРёРјРїСЃРѕРЅР° РёР»Рё РїР°СЂР°Р±РѕР»РѕР№
 {
         int r;
         double h = (b - a)/N;
@@ -24,7 +24,7 @@ double Parabola(double a,double b, int N)// Вычисление интеграла способом Симпсо
     return sum;
 }
 
-double Left_Triangle(double a,double b,int N)//Вычисление интеграла способом Левого треугольника
+double Left_Triangle(double a,double b,int N)//Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° СЃРїРѕСЃРѕР±РѕРј Р›РµРІРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 {
         double h = (b - a)/N;
         double sum =0.0;
@@ -36,7 +36,7 @@ double Left_Triangle(double a,double b,int N)//Вычисление интеграла способом Лев
     return sum;
 }
 
-double Right_Triangle(double a,double b,int N)//Вычисление интеграла способом Правого треугольника
+double Right_Triangle(double a,double b,int N)//Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° СЃРїРѕСЃРѕР±РѕРј РџСЂР°РІРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 {
         double h = (b - a)/N;
         double sum =0.0;
@@ -48,7 +48,7 @@ double Right_Triangle(double a,double b,int N)//Вычисление интеграла способом Пр
     return sum;
 }
 
-double Trapezoid(double a,double b,int N)//Вычисление интеграла способом Трапеции
+double Trapezoid(double a,double b,int N)//Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµРіСЂР°Р»Р° СЃРїРѕСЃРѕР±РѕРј РўСЂР°РїРµС†РёРё
 {
         double h = (b - a)/N;
         double sum =F(a)+F(b);
@@ -64,7 +64,7 @@ int main()
 {
     int N,z, i1=0, N1=10;
     double a, b, calculation;
-    const double measurement_error = 0.0001;//Погрешность
+    const double measurement_error = 0.0001;//РџРѕРіСЂРµС€РЅРѕСЃС‚СЊ
     printf("Hello World");
     printf("\nMy variant is 23.\nMy function is (x+1)^(1/2).\n");
     printf("\nEnter the initial x value:");
@@ -82,7 +82,7 @@ int main()
     printf("\nAllowable measurement error = 0.0001");
     printf("\n");
 
-    do{//Левый Треугольник
+    do{//Р›РµРІС‹Р№ РўСЂРµСѓРіРѕР»СЊРЅРёРє
         i1++;
         calculation = (Left_Triangle( a, b, N1*i1) - Left_Triangle( a, b, N1*(i1+1)));
     }while(calculation > measurement_error);
@@ -91,7 +91,7 @@ int main()
     printf("\nN=%d",z );
     i1= 0;
 
-    do{//Правый треугольник
+    do{//РџСЂР°РІС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
         i1++;
         calculation = (Right_Triangle( a, b, N1*i1) - Right_Triangle( a, b, N1*(i1+1)));
     }while(calculation > measurement_error);
@@ -100,7 +100,7 @@ int main()
     printf("\nN=%d",z );
     i1=0;
 
-    do{//Парабола
+    do{//РџР°СЂР°Р±РѕР»Р°
         i1++;
         calculation = (Parabola( a, b, N1*i1) - Parabola( a, b, N1*(i1+1)));
     }while(calculation >= measurement_error);
@@ -109,7 +109,7 @@ int main()
     printf("\nN=%d",z );
     i1=0;
 
-    do{//Трапеция
+    do{//РўСЂР°РїРµС†РёСЏ
         i1++;
         calculation = (Trapezoid( a, b, N1*i1) - Trapezoid( a, b, N1*(i1+1)));
     }while(calculation > measurement_error);
