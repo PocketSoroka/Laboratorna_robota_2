@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1636053913 source:c:\users\pocketsoroka\desktop\lab2\main.c
+	<stdio.h>
+	<conio.h>
+	<math.h>
+
